@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+group :development do
+  gem 'rails-footnotes', '~> 4.0' # debugging
+end
+
 group :test do
   gem 'capybara', require: false # acceptance/browser specs
   gem 'capybara-webkit', require: false # acceptance/browser specs
@@ -31,8 +35,10 @@ group :test do
 end
 
 group :development, :test do
+  gem 'better_errors' # useful error pages, configure subl url via https://github.com/dhoulb/subl
+  gem 'binding_of_caller', require: false # for better_errors
   gem 'rspec-rails' # specs
-  gem 'pry'
+  gem 'pry' #debugging
   gem 'simplecov', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', require: false
