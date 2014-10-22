@@ -1,4 +1,8 @@
-class GameController < ApplicationController
+class GamesController < ApplicationController
+  def new
+    @game = Game.new
+  end
+
   def show
     @game = Game.find(session[:game_id])
     @team_one_score = session[:team_one_score]
