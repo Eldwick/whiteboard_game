@@ -1,0 +1,25 @@
+
+<section id="splash">
+  <div id="welcome_text">
+    <h2>Lets play a game....</h2>
+  </div>
+  <div id="addTeams">
+      <div id="teamOne">
+        <input type="field" id="addTeamOne" placeholder="Team Member One Name"><br>
+        <div id="teamOneMembers">
+        </div>
+      </div>
+      <div id="startForm">
+        <%= form_tag ("/game/new") do %>
+         <input name="team_one" id="team_one" hidden>
+         <input name="team_two" id="team_two" hidden>
+         <button type="submit">Start Game</button>
+        <% end %>
+      </div>
+      <div id="teamTwo">
+        <input type="field" id="addTeamTwo" placeholder="Team Member Two Name"><br>
+        <div id="teamTwoMembers">
+        </div>
+      </div>
+  </div>
+</section>

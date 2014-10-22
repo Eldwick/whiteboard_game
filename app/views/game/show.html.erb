@@ -1,0 +1,119 @@
+<div id="game">
+  <div id="score_board">
+    <div id="team_one_board">
+      <h2>Team One</h2>
+      <div class="score"><%= @team_one_score %></div>
+      <ul>
+      <% @game.team_one_array.each_with_index do |member, index| %>
+        <% if @round == index %>
+          <li class="active"><%= member %></li>
+        <% else %>
+          <li><%= member %></li>
+        <% end %>
+      <% end %>
+      </ul>
+      <%= form_tag ("/game/update") do %>
+        <input name="team_one_score" id="team_one" value=true hidden>
+        <button id="teamOneWin" hidden>Win!</button>
+      <% end %>
+    </div>
+    <div id="score_board_center">
+      <%= content_tag "span", id: "timer", data: {time: 5} do %>00:00<% end %><br>
+      <button id="start">Start</button>
+      <button id="finish" hidden>Finish</button>
+    </div>
+    <div id="team_two_board">
+      <h2>Team Two</h2>
+      <div class="score"><%= @team_two_score %></div>
+      <ul>
+      <% @game.team_two_array.each_with_index do |member, index| %>
+        <% if @round == index %>
+          <li class="active"><%= member %></li>
+        <% else %>
+          <li><%= member %></li>
+        <% end %>
+      <% end %>
+      </ul>
+      <%= form_tag ("/game/update") do %>
+        <input name="team_two_score" id="team_two" value=true hidden>
+        <button id="teamTwoWin" hidden>Win!</button>
+      <% end %>
+    </div>
+  </div>
+  <div id="questions" hidden>
+    <pre id="teamOne_space">
+class ShoppingCart
+  attr_reader :total_price
+  def initialize
+    @items = []
+    @total_price = 0
+  end
+
+  def add_item(item)
+    @items << item
+    @total_price += item.price
+  end
+end
+
+class Item
+  attr_reader :name, :price
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+end
+
+def shop
+  cart = ShoppingCart.new
+  chair = Item.new("Cool Chair 3000", 150)
+  table = Item.new("Table-o-matic", 550)
+  box = Item.new("Box-mate", 1000)
+
+  cart.add_item(chair)
+  cart.add_item(table)
+  cart.add_item(box)
+
+  puts cart.total_price
+end
+
+shop //1700
+    </pre>
+    <pre id="teamTwo_space">
+class ShoppingCart
+  attr_reader :total_price
+  def initialize
+    @items = []
+    @total_price = 0
+  end
+
+  def add_item(item)
+    @items << item
+    @total_price += item.price
+  end
+end
+
+class Item
+  attr_reader :name, :price
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+end
+
+def shop
+  cart = ShoppingCart.new
+  chair = Item.new("Cool Chair 3000", 150)
+  table = Item.new("Table-o-matic", 550)
+  box = Item.new("Box-mate", 1000)
+
+  cart.add_item(chair)
+  cart.add_item(table)
+  cart.add_item(box)
+
+  puts cart.total_price
+end
+
+shop //1700
+    </pre>
+  </div>
+</div>

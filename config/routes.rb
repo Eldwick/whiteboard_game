@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+  resources :teams
+  post "/game/new", to: "game#create"
+  get "/game", to: "game#show"
+  post "/game/update", to: "game#update"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

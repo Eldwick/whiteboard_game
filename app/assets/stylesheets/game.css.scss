@@ -1,0 +1,52 @@
+// Place all the styles related to the game controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+#game{
+  @extend .container;
+  width: 100%;
+}
+#score_board {
+  @extend .row;
+  background-color: grey;
+}
+
+#team_one_board, #team_two_board{
+  @extend .col-md-5;
+  display: inline-block;
+  text-align: center;
+  .active {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  .score {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }
+  li {
+    display: inline;
+  }
+  ul {
+    padding: 0;
+  }
+}
+
+#score_board_center {
+  @extend .col-md-2;
+  display: inline-block;
+  text-align: center;
+  #timer{
+    font-size: 50px;
+    color: white
+  }
+}
+
+#questions {
+  @extend .row;
+  #teamOne_space, #teamTwo_space {
+    @extend .col-md-6;
+  }
+}
