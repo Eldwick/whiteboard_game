@@ -1,13 +1,14 @@
+############# Circle the 5 errors (result of calling shop should be 1700)#############
 class ShoppingCart
-  attr_reader :total_price
+  attr_writer :total_price
   def initialize
     @items = []
     @total_price = 0
   end
 
   def add_item(item)
-    @items << item
-    @total_price += item.price
+    @items < item
+    @total_price = item.price
   end
 end
 
@@ -20,10 +21,10 @@ class Item
 end
 
 def shop
-  cart = ShoppingCart.new
+  cart = ShoppingCart.new("My Cart")
   chair = Item.new("Cool Chair 3000", 150)
   table = Item.new("Table-o-matic", 550)
-  box = Item.new("Box-mate", 1000)
+  box = Item.new(Box-mate, 1000)
 
   cart.add_item(chair)
   cart.add_item(table)
@@ -32,4 +33,4 @@ def shop
   puts cart.total_price
 end
 
-shop
+shop #1700

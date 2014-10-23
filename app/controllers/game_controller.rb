@@ -4,11 +4,12 @@ class GameController < ApplicationController
     @team_one_score = session[:team_one_score]
     @team_two_score = session[:team_two_score]
     @round = session[:round]
+    @question_file = "/code_questions/fizzbuzz.rb"
   end
 
   def update
     game = Game.find(session[:game_id])
-    
+
     if params[:team_one_score]
       session[:team_one_score] += 1
     else
