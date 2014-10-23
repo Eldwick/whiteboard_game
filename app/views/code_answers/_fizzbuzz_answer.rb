@@ -6,7 +6,8 @@ def fizzbuzz(num)
   puts str
 end
 
-(1..10).each { |num| ((num % 3) == 1) ?  fizzbuzz(num) : nil} <span class="wrong">fizzbuzz called on 1, 4, 7, 10</span>
+(1..10).each { |num| ((num % 3) == 1) ?  fizzbuzz(num) : nil} 
+<span class="wrong">fizzbuzz called on 1, 4, 7, 10</span>
 
 <span class="wrong">Output:</span>
     <span class="wrong">fizz</span>

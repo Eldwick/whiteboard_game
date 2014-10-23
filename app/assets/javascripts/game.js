@@ -57,7 +57,9 @@ function endRound() {
   $('.answer').show()
   $('#teamOneWin').show()
   $('#teamTwoWin').show()
+  $('#tie').show()
   $('#finish').hide()
+  $('#roundEnd').modal('show');
 }
 
 function decrementTime() {

@@ -3,11 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
+body {
+  background: image-url('gridme.png') repeat; 
+}
+
+#banner {
+  background: image-url('code_banner.png') no-repeat; 
+  height: 390px;
+  background-size: cover;
+  margin: 15px auto 15px;
+}
+
 #splash {
   @extend .container;
-  background-color: grey;
+  background: image-url('carbon_fibre.png') repeat; 
   min-height: 100%;
   height: 100%;
+  border-radius: 30px;
+  color: #6da550;
 }
 
 #welcome_text, #addTeams {

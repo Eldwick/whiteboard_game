@@ -1,4 +1,4 @@
-############# Circle the 5 errors (result of calling shop put 1700 to console)#############
+##### Circle the 5 errors (result of calling shop puts 1700 to console) #####
 class ShoppingCart
   <span class="wrong">attr_writer :total_price            # attr_reader :total_price</span> 
   def initialize

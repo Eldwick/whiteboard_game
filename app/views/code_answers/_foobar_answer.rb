@@ -29,5 +29,5 @@ foo(bar)
 
 <span class="wrong">Output:</span>
     <span class="wrong">5</span>
-    <span class="wrong">7</span>
+    <span class="wrong">8</span>
     <span class="wrong">9</span>
