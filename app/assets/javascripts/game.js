@@ -1,3 +1,42 @@
+var initAddMembers;
+var teamOneIndex = 1;
+var teamTwoIndex = 1;
+
+initAddMembers = function() {
+  $( '#newMemberForTeamOne' ).keypress(function(e) {
+    if(e.which == 13) {
+      var userDiv = document.createElement('div');
+      userDiv.innerHTML = teamOneIndex + ": " + this.value;
+      $("#teamOneMembers").append(userDiv);
+
+      currentMembers = $("#team_one").val();
+      new_member = $("#team_one").val() == '' ? this.value : ',' + this.value;
+      all_members = currentMembers + new_member;
+      $("#team_one").val(all_members);
+
+      $(this).val('');
+      teamOneIndex++;
+    }
+  })
+
+  $( '#newMemberForTeamTwo' ).keypress(function(e) {
+    if(e.which == 13) {
+      var userDiv = document.createElement('div');
+      userDiv.innerHTML = teamTwoIndex + ": " + this.value;
+      $("#teamTwoMembers").append(userDiv);
+
+      currentMembers = $("#team_two").val();
+      new_member = $("#team_two").val() == '' ? this.value : ',' + this.value;
+      all_members = currentMembers + new_member;
+      $("#team_two").val(all_members);
+
+      $(this).val('')
+      teamTwoIndex++;
+    }
+  })
+}
+
+
 var GAME = function() {
   var counter,
       secondsRemaining,
@@ -30,8 +69,8 @@ var GAME = function() {
   }
 }()
 
-var ready;
-ready = function() {
+var initGame;
+initGame = function() {
 
   $('#score').text(GAME.getScore())
   $('#start').on('click', function(){
@@ -76,5 +115,8 @@ function decrementTime() {
   }
 }
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+$(document).ready(function() {
+  initAddMembers();
+  initGame();
+}
+// $(document).on('page:load', ready);

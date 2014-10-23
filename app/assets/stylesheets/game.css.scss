@@ -3,13 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
-#game{
+#newGame{
   @extend .container;
+  background-color: grey;
+  min-height: 100%;
+  height: 100%;
   width: 100%;
 }
 body {
   background: image-url('gridme.png') repeat; 
 }
+
+
+#addTeams {
+  @extend .row;
+  text-align: center;
+}
+
+#teamOne, #teamTwo {
+  @extend .col-md-5;
+  @extend .form-group;
+  #teamOneMembers, #teamTwoMembers {
+    margin-top: 15px;
+    color: white;
+    font-size: 30px;
+  }
+  #newMemberForTeamOne, #newMemberForTeamTwo {
+    @extend .form-control;
+  }
+}
+
+#startForm {
+  @extend .col-md-2;
+}
+
 
 #score_board {
   @extend .row;

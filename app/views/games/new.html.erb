@@ -1,13 +1,13 @@
 <div id="banner"></div>
-<section id="splash">
+<section id="newGame">
   <div id="welcome_text">
     <h2>Lets play a game....</h2>
   </div>
   <div id="addTeams">
       <div id="teamOne">
-        <input type="field" id="addTeamOne" placeholder="Team Member One Name"><br>
-        <div id="teamOneMembers">
-        </div>
+        <label for='newMemberForTeamOne'>Team One</label>
+        <input type="field" id="newMemberForTeamOne" placeholder="Add a Member"><br>
+        <div id="teamOneMembers"><!- placeholder for team list-></div>
       </div>
       <div id="startForm">
         <%= form_tag ("/game/new") do %>
@@ -17,9 +17,9 @@
         <% end %>
       </div>
       <div id="teamTwo">
-        <input type="field" id="addTeamTwo" placeholder="Team Member Two Name"><br>
-        <div id="teamTwoMembers">
-        </div>
+        <label for='newMemberForTeamTwo'>Team Two</label>
+        <input type="field" id="newMemberForTeamTwo" placeholder="Add a Member"><br>
+        <div id="teamTwoMembers"><!- placeholder for team list-></div>
       </div>
   </div>
 </section>
