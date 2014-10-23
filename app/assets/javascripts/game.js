@@ -4,9 +4,9 @@ var teamTwoIndex = 1;
 initAddMembers = function() {
   $( '#newMemberForTeamOne' ).keypress(function(e) {
     if(e.which == 13) {
-      var userDiv = document.createElement('div');
-      userDiv.innerHTML = teamOneIndex + ": " + this.value;
-      $("#teamOneMembers").append(userDiv);
+      var userItem = document.createElement('li');
+      userItem.innerHTML = this.value;
+      $("#teamOneMembers").append(userItem);
 
       currentMembers = $("#team_one").val();
       new_member = ($("#team_one").val() === '') ? this.value : ',' + this.value;
@@ -20,9 +20,9 @@ initAddMembers = function() {
 
   $( '#newMemberForTeamTwo' ).keypress(function(e) {
     if(e.which == 13) {
-      var userDiv = document.createElement('div');
-      userDiv.innerHTML = teamTwoIndex + ": " + this.value;
-      $("#teamTwoMembers").append(userDiv);
+      var userItem = document.createElement('li');
+      userItem.innerHTML = this.value;
+      $("#teamTwoMembers").append(userItem);
 
       currentMembers = $("#team_two").val();
       new_member = ($("#team_two").val() === '') ? this.value : ',' + this.value;

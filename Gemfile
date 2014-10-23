@@ -34,6 +34,7 @@ group :test do
   gem 'capybara', require: false # acceptance/browser specs
   gem 'capybara-webkit', require: false # acceptance/browser specs
   gem 'launchy', require: false # capybara, save_and_open_page
+  gem 'selenium-webdriver', require: false
 end
 
 group :development, :test do
