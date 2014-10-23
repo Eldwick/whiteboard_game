@@ -6,8 +6,10 @@ ready = function() {
   $( '#addTeamOne' ).keypress(function(e) {
     if(e.which == 13) {
       var userDiv = document.createElement('div');
-      userDiv.innerHTML = teamOneIndex + ": " + this.value;
+      userDiv.innerHTML = teamOneIndex + " - " + this.value;
+      $(userDiv).hide()
       $("#teamOneMembers").append(userDiv);
+      $(userDiv).show("slow")
 
       currentMembers = $("#team_one").val();
       new_member = $("#team_one").val() == '' ? this.value : ',' + this.value;
@@ -22,8 +24,10 @@ ready = function() {
   $( '#addTeamTwo' ).keypress(function(e) {
     if(e.which == 13) {
       var userDiv = document.createElement('div');
-      userDiv.innerHTML = teamTwoIndex + ": " + this.value;
+      userDiv.innerHTML = teamTwoIndex + " - " + this.value;
+      $(userDiv).hide()
       $("#teamTwoMembers").append(userDiv);
+      $(userDiv).show("slow")
 
       currentMembers = $("#team_two").val();
       new_member = $("#team_two").val() == '' ? this.value : ',' + this.value;

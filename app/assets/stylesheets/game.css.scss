@@ -10,8 +10,14 @@
 #score_board {
   @extend .row;
   background-color: grey;
+  height: 190px;
 }
 
+.wrong {
+  color: red;
+  font-weight: bold;
+  border: 5px;
+}
 #team_one_board, #team_two_board{
   @extend .col-md-5;
   display: inline-block;

@@ -53,6 +53,8 @@ ready = function() {
 function endRound() {
   clearInterval(GAME.getCounter());
   $('#timer').text("00:00");
+  $('.question').hide()
+  $('.answer').show()
   $('#teamOneWin').show()
   $('#teamTwoWin').show()
   $('#finish').hide()
