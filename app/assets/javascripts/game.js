@@ -1,4 +1,3 @@
-var initAddMembers;
 var teamOneIndex = 1;
 var teamTwoIndex = 1;
 
@@ -10,14 +9,14 @@ initAddMembers = function() {
       $("#teamOneMembers").append(userDiv);
 
       currentMembers = $("#team_one").val();
-      new_member = $("#team_one").val() == '' ? this.value : ',' + this.value;
+      new_member = ($("#team_one").val() === '') ? this.value : ',' + this.value;
       all_members = currentMembers + new_member;
       $("#team_one").val(all_members);
 
       $(this).val('');
       teamOneIndex++;
     }
-  })
+  });
 
   $( '#newMemberForTeamTwo' ).keypress(function(e) {
     if(e.which == 13) {
@@ -26,15 +25,15 @@ initAddMembers = function() {
       $("#teamTwoMembers").append(userDiv);
 
       currentMembers = $("#team_two").val();
-      new_member = $("#team_two").val() == '' ? this.value : ',' + this.value;
+      new_member = ($("#team_two").val() === '') ? this.value : ',' + this.value;
       all_members = currentMembers + new_member;
       $("#team_two").val(all_members);
 
-      $(this).val('')
+      $(this).val('');
       teamTwoIndex++;
     }
-  })
-}
+  });
+};
 
 
 var GAME = function() {
@@ -55,68 +54,66 @@ var GAME = function() {
         secondsRemaining = $('#timer').data('time');
       },
       getSecondsRemaining: function() {
-        return secondsRemaining
+        return secondsRemaining;
       },
       resetScore: function(){
         score = 0;
       },
       addScore: function(){
-        score++
+        score++;
       },
       getScore: function() {
-        return score
+        return score;
       }
-  }
-}()
+  };
+}();
 
 var initGame;
 initGame = function() {
-
-  $('#score').text(GAME.getScore())
+  $('#score').text(GAME.getScore());
   $('#start').on('click', function(){
-    clearInterval(GAME.getCounter())
-    GAME.resetScore()
-    GAME.resetSecondsRemaining()
+    clearInterval(GAME.getCounter());
+    GAME.resetScore();
+    GAME.resetSecondsRemaining();
     GAME.setCounter(setInterval(function(){
-      decrementTime()
-    }, 1000))
-    $('#questions').show()
-    $(this).hide()
-    $('#finish').show()
-  })
+      decrementTime();
+    }, 1000));
+    $('#questions').show();
+    $(this).hide();
+    $('#finish').show();
+  });
   $('#finish').on('click', function(){
-    endRound()
-  })
-}
+    endRound();
+  });
+};
 
-function endRound() {
+endRound = function() {
   clearInterval(GAME.getCounter());
   $('#timer').text("00:00");
   $('.question').hide()
   $('.answer').show()
-  $('#teamOneWin').show()
-  $('#teamTwoWin').show()
-  $('#tie').show()
-  $('#finish').hide()
+  $('#teamOneWin').show();
+  $('#teamTwoWin').show();
+  $('#tie').show();
+  $('#finish').hide();
   $('#roundEnd').modal('show');
-}
+};
 
-function decrementTime() {
-  GAME.decrementSecondsRemaining(1)
-  var secondsRemaining = GAME.getSecondsRemaining()
+decrementTime = function() {
+  GAME.decrementSecondsRemaining(1);
+  var secondsRemaining = GAME.getSecondsRemaining();
   if (secondsRemaining <= 0){
     endRound();
   } else {
-    var minutes = parseInt(secondsRemaining / 60),
+    var minutes = parseInt(secondsRemaining / 60, 10),
         minutesFormatted = (minutes < 10) ? '0' + minutes : minutes;
-        seconds = secondsRemaining % 60,
+        seconds = secondsRemaining % 60;
         secondsFormatted = (seconds < 10) ? '0' + seconds : seconds;
     $('#timer').text(minutesFormatted+":"+secondsFormatted);
   }
-}
+};
 
 $(document).ready(function() {
   initAddMembers();
   initGame();
-}
-// $(document).on('page:load', ready);
+});
