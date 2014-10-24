@@ -10,10 +10,10 @@
         <ol id="teamOneMembers"><!- placeholder for team list-></ol>
       </div>
       <div id="startForm">
-        <%= form_tag ("/game/new") do %>
-         <input name="team_one" id="team_one" hidden>
-         <input name="team_two" id="team_two" hidden>
-         <button type="submit">Start Game</button>
+        <%= form_for @game do |f| %>
+         <%= f.hidden_field :team_one %>
+         <%= f.hidden_field :team_two %>
+         <%= f.submit 'Start Game' %>
         <% end %>
       </div>
       <div id="teamTwo">

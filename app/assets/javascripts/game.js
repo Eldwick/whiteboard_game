@@ -8,10 +8,10 @@ initAddMembers = function() {
       userItem.innerHTML = this.value;
       $("#teamOneMembers").append(userItem);
 
-      currentMembers = $("#team_one").val();
-      new_member = ($("#team_one").val() === '') ? this.value : ',' + this.value;
+      currentMembers = $("#game_team_one").val();
+      new_member = ($("#game_team_one").val() === '') ? this.value : ',' + this.value;
       all_members = currentMembers + new_member;
-      $("#team_one").val(all_members);
+      $("#game_team_one").val(all_members);
 
       $(this).val('');
       teamOneIndex++;
@@ -24,10 +24,10 @@ initAddMembers = function() {
       userItem.innerHTML = this.value;
       $("#teamTwoMembers").append(userItem);
 
-      currentMembers = $("#team_two").val();
-      new_member = ($("#team_two").val() === '') ? this.value : ',' + this.value;
+      currentMembers = $("#game_team_two").val();
+      new_member = ($("#game_team_two").val() === '') ? this.value : ',' + this.value;
       all_members = currentMembers + new_member;
-      $("#team_two").val(all_members);
+      $("#game_team_two").val(all_members);
 
       $(this).val('');
       teamTwoIndex++;

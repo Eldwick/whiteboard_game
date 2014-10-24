@@ -37,13 +37,17 @@ class GamesController < ApplicationController
   end
 
   def create
-    game = Game.create(team_one: params[:team_one], team_two: params[:team_two])
-    session[:game_id] =  game.id
-    session[:team_one_score] = 0
-    session[:team_two_score] = 0
-    session[:round] = 0
-    session[:round_q] = 0
-    redirect_to "/game"
+    @game = Game.new(games_params)
+    if @game.save
+      session[:game_id] = @game.id
+      session[:team_one_score] = 0
+      session[:team_two_score] = 0
+      session[:round] = 0
+      session[:round_q] = 0
+      redirect_to @game
+    else
+      render :new
+    end
   end
 
   private
