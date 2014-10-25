@@ -16,4 +16,17 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
-html,body{height:100%;}
+html,
+body {
+  height:100%;
+}
+
+body {
+  font-family: "Russo One";
+}
+
+button {
+  @extend .btn;
+  @extend .btn-success;
+  font-size: 18px;
+}

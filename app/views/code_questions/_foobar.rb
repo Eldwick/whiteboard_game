@@ -13,11 +13,11 @@ end
 
 def bar(x)
   if x % 2 == 0
-    x += 1
+    x += 2
     puts x
     x
   else
-    x += 2
+    x += 1
     puts x
     x
   end

@@ -7,17 +7,43 @@
   @extend .container;
   width: 100%;
 }
-#score_board {
-  @extend .row;
-  background-color: grey;
+body {
+  background: image-url('gridme.png') repeat; 
 }
 
+#score_board {
+  @extend .row;
+  background: image-url('carbon_fibre.png') repeat; 
+  height: 200px;
+  color: #6da550;
+}
+
+#roundEndLabel{
+  text-align: center;
+}
+
+#roundEndContent {
+  color: #6da550;
+}
+#roundEnd {
+  background: image-url('carbon_fibre.png') repeat;  
+}
+.wrong {
+  color: red;
+  font-weight: bold;
+  border: 5px;
+}
+
+#timer {
+   font-family: "Orbitron";
+}
 #team_one_board, #team_two_board{
   @extend .col-md-5;
   display: inline-block;
   text-align: center;
+  font-size: 16px;
   .active {
-    font-size: 20px;
+    font-size: 26px;
     font-weight: bold;
     color: white;
   }
@@ -28,6 +54,7 @@
   }
   li {
     display: inline;
+    margin-left: 10px;
   }
   ul {
     padding: 0;

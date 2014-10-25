@@ -4,7 +4,8 @@ class GameController < ApplicationController
     @team_one_score = session[:team_one_score]
     @team_two_score = session[:team_two_score]
     @round = session[:round]
-    @question_file = "/code_questions/fizzbuzz.rb"
+    @question_file = "/code_questions/#{question_files[session[:round_q]]}.rb"
+    @answer_file = "/code_answers/#{question_files[session[:round_q]]}_answer.rb"
   end
 
   def update
@@ -12,7 +13,7 @@ class GameController < ApplicationController
 
     if params[:team_one_score]
       session[:team_one_score] += 1
-    else
+    elsif params[:team_two_score]
       session[:team_two_score] += 1
     end
 
@@ -20,6 +21,12 @@ class GameController < ApplicationController
       session[:round] = 0
     else
       session[:round] += 1
+    end
+
+    if session[:round_q] == (question_files.length - 1)
+      session[:round_q] = 0
+    else
+      session[:round_q] += 1
     end
 
     redirect_to "/game"
@@ -31,11 +38,14 @@ class GameController < ApplicationController
     session[:team_one_score] = 0
     session[:team_two_score] = 0
     session[:round] = 0
+    session[:round_q] = 0
     redirect_to "/game"
   end
 
   private
-
+  def question_files
+    ["foobar","fizzbuzz","shopping_cart","class_mix"]
+  end
   def games_params
     params.require(:game).permit(:team_one, :team_two)
   end

@@ -1,8 +1,8 @@
 ############### Write all the outputs to the console ###############
 
-def fizzbuzz(num)
+def fizzbuzz(x)
   str = "fizz"
-  str += "buzz" if num % 2 == 0
+  str += "buzz" if x % 2 == 0
   puts str
 end
 

@@ -1,3 +1,5 @@
+############### Write the output to the console ###############
+
 class Foo
   def self.scheme(num)
     num *= 3

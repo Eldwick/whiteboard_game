@@ -1,5 +1,6 @@
 <div id="game">
   <div id="score_board">
+
     <div id="team_one_board">
       <h2>Team One</h2>
       <div class="score"><%= @team_one_score %></div>
@@ -17,11 +18,16 @@
         <button id="teamOneWin" hidden>Win!</button>
       <% end %>
     </div>
+
     <div id="score_board_center">
-      <%= content_tag "span", id: "timer", data: {time: 180} do %>00:00<% end %><br>
+      <%= content_tag "span", id: "timer", data: {time: 240} do %>00:00<% end %><br>
       <button id="start">Start</button>
       <button id="finish" hidden>Finish</button>
+      <%= form_tag ("/game/update") do %>
+        <button id="tie" hidden>Tie</button>
+      <% end %>
     </div>
+
     <div id="team_two_board">
       <h2>Team Two</h2>
       <div class="score"><%= @team_two_score %></div>
@@ -40,12 +46,32 @@
       <% end %>
     </div>
   </div>
+
   <div id="questions" hidden>
     <pre id="teamOne_space">
-<%= render @question_file %>
+<div class="question"><%= render @question_file %></div><div class="answer" hidden><%= render @answer_file %></div>  
     </pre>
     <pre id="teamTwo_space">
-<%= render @question_file %>
+<div class="question"><%= render @question_file %></div><div class="answer" hidden><%= render @answer_file %></div>  
     </pre>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="roundEnd" tabindex="-1" role="dialog" aria-labelledby="roundEndLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="roundEndContent">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="roundEndLabel">Markers Down!</h2>
+      </div>
+      <div class="modal-body">
+        Hand the marker to your next team mate.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">See Answers</button>
+      </div>
+    </div>
   </div>
 </div>
