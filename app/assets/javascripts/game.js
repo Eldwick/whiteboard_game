@@ -6,7 +6,9 @@ initAddMembers = function() {
     if(e.which == 13) {
       var userItem = document.createElement('li');
       userItem.innerHTML = this.value;
+      $(userItem).hide();
       $("#teamOneMembers").append(userItem);
+      $(userItem).show("slow");
 
       currentMembers = $("#game_team_one").val();
       new_member = ($("#game_team_one").val() === '') ? this.value : ',' + this.value;
@@ -22,7 +24,9 @@ initAddMembers = function() {
     if(e.which == 13) {
       var userItem = document.createElement('li');
       userItem.innerHTML = this.value;
+      $(userItem).hide();
       $("#teamTwoMembers").append(userItem);
+      $(userItem).show("slow");
 
       currentMembers = $("#game_team_two").val();
       new_member = ($("#game_team_two").val() === '') ? this.value : ',' + this.value;
@@ -90,8 +94,8 @@ initGame = function() {
 endRound = function() {
   clearInterval(GAME.getCounter());
   $('#timer').text("00:00");
-  $('.question').hide()
-  $('.answer').show()
+  $('.question').hide();
+  $('.answer').show();
   $('#teamOneWin').show();
   $('#teamTwoWin').show();
   $('#tie').show();
