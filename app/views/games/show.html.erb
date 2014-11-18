@@ -13,7 +13,7 @@
         <% end %>
       <% end %>
       </ul>
-      <%= form_tag ("/game/update") do %>
+      <%= form_for @game do %>
         <input name="team_one_score" id="team_one" value=true hidden>
         <button id="teamOneWin" hidden>Win!</button>
       <% end %>
@@ -23,7 +23,7 @@
       <%= content_tag "span", id: "timer", data: {time: 240} do %>00:00<% end %><br>
       <button id="start">Start</button>
       <button id="finish" hidden>Finish</button>
-      <%= form_tag ("/game/update") do %>
+      <%= form_tag @game do %>
         <button id="tie" hidden>Tie</button>
       <% end %>
     </div>
@@ -40,7 +40,7 @@
         <% end %>
       <% end %>
       </ul>
-      <%= form_tag ("/game/update") do %>
+      <%= form_for @game do %>
         <input name="team_two_score" id="team_two" value=true hidden>
         <button id="teamTwoWin" hidden>Win!</button>
       <% end %>
@@ -49,10 +49,10 @@
 
   <div id="questions" hidden>
     <pre id="teamOne_space">
-<div class="question"><%= render @question_file %></div><div class="answer" hidden><%= render @answer_file %></div>  
+<div class="question"><%= render @question_file %></div><div class="answer" hidden><%= render @answer_file %></div>
     </pre>
     <pre id="teamTwo_space">
-<div class="question"><%= render @question_file %></div><div class="answer" hidden><%= render @answer_file %></div>  
+<div class="question"><%= render @question_file %></div><div class="answer" hidden><%= render @answer_file %></div>
     </pre>
   </div>
 
