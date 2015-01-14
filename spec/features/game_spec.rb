@@ -15,8 +15,6 @@ feature "Starting a Game" do
     fill_in 'Team Two', with: "Kelsey"
     find('#newMemberForTeamTwo').native.send_keys(:return)
 
-save_and_open_page
-
     expect(page.find('#teamOneMembers')).to have_selector('li', count: 2)
     expect(page.find('#teamOneMembers')).to have_content(/Matt/)
     expect(page.find('#teamTwoMembers')).to have_content(/James/)

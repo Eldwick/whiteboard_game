@@ -14,8 +14,11 @@ To Play
 For Developers
 ==============
 
-Test via
+https://github.com/Eldwick/whiteboard_game
+
+Testing
 ---------
+`$ rake`
 `$ rspec`
 
 Dependencies
